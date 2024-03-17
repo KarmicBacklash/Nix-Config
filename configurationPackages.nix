@@ -51,7 +51,6 @@
       vscodium
       wine-staging
       yt-dlp
-      yuzu-early-access
     ];
   };
 
@@ -59,7 +58,7 @@
   services.flatpak.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
   xdg.portal.config.common.default = "gtk";
-    # Currently installed, for reference only
+  # Currently installed flatpaks, for reference only
     # Flatseal
     # Obsidian
     # Only Office

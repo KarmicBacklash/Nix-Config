@@ -7,8 +7,8 @@
     ./configurationStorageDevices.nix # Where the storage devices are configured
     ./configurationPackages.nix # Where all user packages are configured, Flatpak is also maintained here
     ./configurationShell.nix # ZSH, Shell, and Aliases
-    ./desktopPlasma5.nix # Activates Plasma 5 + X11
-    # ./desktopPlasma6.nix # Activates Plasma 6 + Wayland (Not yet made, will work on later)
+    #./desktopPlasma5.nix # Activates Plasma 5 + X11
+     ./desktopPlasma6.nix # Activates Plasma 6 + Wayland (Not yet made, will work on later)
   ];
 
   # General System Configuration

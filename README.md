@@ -1,0 +1,1 @@
+This is my super basic, no bells and whistles, home-manager-less, flakeless config. It won't work as it is out of the box as the actual config file still in /etc/nixos/, I just forward it to ./configurationMain, which then daisy chains to the rest of them. I am aware that this is not the best way of doing it, but until I find a reason to do it differently I don't care.

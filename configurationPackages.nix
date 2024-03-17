@@ -38,7 +38,6 @@
       ntfs3g
       obs-studio
       openmw
-      peazip
       portmod
       python3
       qbittorrent

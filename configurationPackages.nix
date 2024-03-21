@@ -32,6 +32,7 @@
       kdenlive
       krita
       libvirt
+      mangohud
       mc
       micro
       mullvad-vpn
@@ -50,6 +51,7 @@
       vscodium
       wine-staging
       yt-dlp
+      cemu
     ];
   };
 

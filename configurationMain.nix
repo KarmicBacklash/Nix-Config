@@ -8,7 +8,8 @@
     ./configurationPackages.nix # Where all user packages are configured, Flatpak is also maintained here
     ./configurationShell.nix # ZSH, Shell, and Aliases
     #./desktopPlasma5.nix # Activates Plasma 5 + X11
-     ./desktopPlasma6.nix # Activates Plasma 6 + Wayland (Not yet made, will work on later)
+     ./desktopPlasma6.nix # Activates Plasma 6 + Wayland
+    # ./waydroid.nix
   ];
 
   # General System Configuration

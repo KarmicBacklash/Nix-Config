@@ -17,6 +17,7 @@
       bitwarden
       bottles
       btop
+      cemu
       discord
       dolphin-emu
       filelight
@@ -25,6 +26,7 @@
       gamescope
       gimp
       git
+      gitkraken
       godot_4
       gparted
       inkscape
@@ -32,6 +34,7 @@
       kdenlive
       krita
       libvirt
+      logseq
       mangohud
       mc
       micro
@@ -50,8 +53,8 @@
       vlc
       vscodium
       wine-staging
+      yakuake
       yt-dlp
-      cemu
     ];
   };
 

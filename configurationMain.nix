@@ -7,8 +7,8 @@
     ./configurationStorageDevices.nix # Where the storage devices are configured
     ./configurationPackages.nix # Where all user packages are configured, Flatpak is also maintained here
     ./configurationShell.nix # ZSH, Shell, and Aliases
-    #./desktopPlasma5.nix # Activates Plasma 5 + X11
-     ./desktopPlasma6.nix # Activates Plasma 6 + Wayland
+    ./desktopPlasma5.nix # Activates Plasma 5 + X11
+    # ./desktopPlasma6.nix # Activates Plasma 6 + Wayland
     # ./waydroid.nix
   ];
 
@@ -19,6 +19,9 @@
 
   # Linux Kernel
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+
+  # Swap Devices
+  swapDevices = [];
 
   # Networking Configuration
   networking.networkmanager.enable = true;

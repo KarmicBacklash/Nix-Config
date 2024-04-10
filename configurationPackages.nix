@@ -22,6 +22,7 @@
       dolphin-emu
       filelight
       firefox
+      fluent-reader
       gamemode
       gamescope
       gimp
@@ -34,6 +35,7 @@
       kdenlive
       krita
       libvirt
+      lmms
       logseq
       mangohud
       mc
@@ -41,9 +43,10 @@
       mullvad-vpn
       ntfs3g
       obs-studio
+      obsidian
       openmw
       portmod
-      python3
+      prismlauncher
       qbittorrent
       rclone
       ryujinx

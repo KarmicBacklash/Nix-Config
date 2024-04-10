@@ -10,7 +10,7 @@
     enable = true;
     ohMyZsh = {
       enable = true;
-      plugins = ["git" "python" "man"];
+      plugins = ["git" "man"];
       theme = "agnoster";
     };
     shellAliases = {

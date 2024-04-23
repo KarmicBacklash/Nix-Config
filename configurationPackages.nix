@@ -14,7 +14,6 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       alejandra
-      bitwarden
       bottles
       btop
       cemu
@@ -27,7 +26,6 @@
       gamescope
       gimp
       git
-      gitkraken
       godot_4
       gparted
       inkscape
@@ -36,20 +34,19 @@
       krita
       libvirt
       lmms
-      logseq
       mangohud
       mc
       micro
       mullvad-vpn
       ntfs3g
       obs-studio
-      obsidian
       openmw
       portmod
-      prismlauncher
       qbittorrent
       rclone
       ryujinx
+      syncthing
+      teamviewer
       tenacity
       thefuck
       tldr
@@ -60,6 +57,9 @@
       yt-dlp
     ];
   };
+
+  # Teamviewer
+  services.teamviewer.enable = true;
 
   # Flatpak
   services.flatpak.enable = true;

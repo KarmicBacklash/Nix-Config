@@ -9,7 +9,7 @@ services = {
         enable = true;
         user = "karma";
         dataDir = "/home/karma/Documents";    # Default folder for new synced folders
-        configDir = "/home/karma/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
+        configDir = "/home/karma/.config/syncthing";   # Folder for Syncthing's settings and keys
 
     };
 

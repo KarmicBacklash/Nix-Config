@@ -45,6 +45,14 @@
   # Mullvad
   services.mullvad-vpn.enable = true;
 
+  # LD Fix
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  ];
+
+
   # X11 Keymap Configuration
   services.xserver = {
     xkb.layout = "us";

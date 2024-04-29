@@ -14,6 +14,7 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       alejandra
+      appimage-run
       bottles
       btop
       cemu
@@ -39,22 +40,25 @@
       micro
       mullvad-vpn
       ntfs3g
+      neofetch
       obs-studio
       openmw
       portmod
       qbittorrent
+      qemu
       rclone
-      ryujinx
       syncthing
       teamviewer
       tenacity
       thefuck
       tldr
+      virt-manager
       vlc
       vscodium
       wine-staging
       yakuake
       yt-dlp
+      shipwright
     ];
   };
 

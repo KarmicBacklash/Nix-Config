@@ -4,13 +4,12 @@
   ...
 }: {
   imports = [
-    ./configurationStorageDevices.nix # Where the storage devices are configured
-    ./configurationPackages.nix # Where all user packages are configured, Flatpak is also maintained here
-    ./configurationShell.nix # ZSH, Shell, and Aliases
-    ./configurationSyncthing.nix # Syncthing configurations
-    ./desktopPlasma5.nix # Activates Plasma 5 + X11
-    # ./desktopPlasma6.nix # Activates Plasma 6 + Wayland
-    # ./waydroid.nix
+    ./configurationStorageDevices.nix
+    ./configurationPackages.nix
+    ./configurationShell.nix
+    ./configurationSyncthing.nix
+    ./desktopPlasma5.nix
+    # ./desktopPlasma6.nix
   ];
 
   # General System Configuration
@@ -21,11 +20,13 @@
   # Linux Kernel
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
-  # Swap Devices
-  swapDevices = [];
+  swapDevices = [ {
+    device = "/var/lib/swapfile";
+    size = 48*1024;
+  } ];
 
   # zram
-  zramSwap.enable = true;
+  # zramSwap.enable = true;
 
   # Networking Configuration
   networking.networkmanager.enable = true;
@@ -44,6 +45,18 @@
 
   # Mullvad
   services.mullvad-vpn.enable = true;
+
+  # Systemd-resolved - Added to fix whatever is wrong with mullvad
+  networking.nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+
+  services.resolved = {
+    enable = true;
+    dnssec = "true";
+    domains = [ "~." ];
+    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+    dnsovertls = "true";
+  };
+
 
   # LD Fix
   programs.nix-ld.enable = true;
@@ -88,5 +101,14 @@
   # Teamviewer
   services.teamviewer.enable = true;
 
+  # App Image support
+  boot.binfmt.registrations.appimage = {
+    wrapInterpreterInShell = false;
+    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+    recognitionType = "magic";
+    offset = 0;
+    mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
+    magicOrExtension = ''\x7fELF....AI\x02'';
+};
 
 }

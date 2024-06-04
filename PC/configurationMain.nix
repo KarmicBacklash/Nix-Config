@@ -8,25 +8,23 @@
     ./configurationPackages.nix
     ./configurationShell.nix
     ./configurationSyncthing.nix
+    ./configurationVirtualisation.nix
     ./desktopPlasma5.nix
     # ./desktopPlasma6.nix
   ];
+
+  # Allow Proprietary stuff
+  nixpkgs.config.allowUnfree = true;
 
   # General System Configuration
   networking.hostName = "KarmaPC";
   time.timeZone = "America/Los_Angeles";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Linux Kernel
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-
-  swapDevices = [ {
-    device = "/var/lib/swapfile";
-    size = 48*1024;
-  } ];
-
-  # zram
-  # zramSwap.enable = true;
+  # swapDevices = [ {
+  #   device = "/var/lib/swapfile";
+  #   size = 48*1024;
+  # } ];
 
   # Networking Configuration
   networking.networkmanager.enable = true;
@@ -57,14 +55,12 @@
     dnsovertls = "true";
   };
 
-
   # LD Fix
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
-
 
   # X11 Keymap Configuration
   services.xserver = {
@@ -93,22 +89,4 @@
     };
     gamemode.enable = true;
   };
-
-  # For Virtualization
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-
-  # Teamviewer
-  services.teamviewer.enable = true;
-
-  # App Image support
-  boot.binfmt.registrations.appimage = {
-    wrapInterpreterInShell = false;
-    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
-    recognitionType = "magic";
-    offset = 0;
-    mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
-    magicOrExtension = ''\x7fELF....AI\x02'';
-};
-
 }

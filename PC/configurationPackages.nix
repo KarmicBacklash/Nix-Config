@@ -5,6 +5,8 @@
 }: {
   # System Packages
   environment.systemPackages = with pkgs; [
+    virtiofsd
+
   ];
 
   # User Account and Installed Packages
@@ -20,9 +22,11 @@
       cemu
       discord
       dolphin-emu
+      fastfetch
       filelight
       firefox
       fluent-reader
+      freetube
       gamemode
       gamescope
       gimp
@@ -33,6 +37,7 @@
       kate
       kdenlive
       krita
+      lact
       libvirt
       lmms
       mangohud
@@ -40,10 +45,10 @@
       micro
       mullvad-vpn
       ntfs3g
-      neofetch
       obs-studio
       openmw
       portmod
+      python3
       qbittorrent
       qemu
       rclone
@@ -53,12 +58,12 @@
       thefuck
       tldr
       virt-manager
+      virtualbox
       vlc
       vscodium
       wine-staging
       yakuake
       yt-dlp
-      shipwright
     ];
   };
 
